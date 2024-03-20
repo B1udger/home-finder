@@ -1,0 +1,14 @@
+.key,
+.title {
+  font-weight: bold;
+}
+
+.btn-holder {
+  button {
+    margin: 5px;
+  }
+}
+
+.card {
+  margin: 20px;
+}

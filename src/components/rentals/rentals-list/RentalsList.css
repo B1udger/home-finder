@@ -1,0 +1,10 @@
+.rentals-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+h2 {
+  margin-top: 20px;
+  font-weight: bold;
+}
