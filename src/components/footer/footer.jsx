@@ -7,8 +7,15 @@ export function Footer() {
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}
         >
           <span>© 2024 Copyright: </span>
-          <a className="text-reset fw-bold" href="#">
-            Iliyan Stefanov & Martin Georgiev
+          <a className="text-reset fw-bold" href="https://github.com/B1udger">
+            Iliyan Stefanov
+          </a>
+          <span> & </span>
+          <a
+            className="text-reset fw-bold"
+            href="https://github.com/m-georgiev01"
+          >
+            Martin Georgiev
           </a>
         </div>
       </div>
