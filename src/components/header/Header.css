@@ -1,0 +1,28 @@
+.bg-dark {
+    background-color: #753231 !important; 
+    color: white; 
+  }
+
+  .navbar-brand {
+    font-size: 50px;
+    color: #fff; 
+  }
+
+  .nav-link {
+    color: #fff; 
+  }
+
+  .nav-link:hover {
+    color: #792F2C; 
+    background-color: #A67E7D; 
+  }
+
+  .container {
+    padding: 20px; 
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center; 
+  }
+  
