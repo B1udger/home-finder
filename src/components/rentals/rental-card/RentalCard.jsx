@@ -1,7 +1,7 @@
 import { Button, Card } from 'react-bootstrap';
 import './RentalCard.css';
 
-export function RentalCard({ rental }) {
+export function RentalCard({ rental, handleDelete }) {
   return (
     <div className="rental-card">
       <Card style={{ width: '18rem' }}>
@@ -31,7 +31,9 @@ export function RentalCard({ rental }) {
           <div className="btn-holder">
             <Button variant="primary">Rent</Button>
             <Button variant="info">More info</Button>
-            <Button variant="danger">Delete</Button>
+            <Button variant="danger" onClick={() => handleDelete(rental.id)}>
+              Delete
+            </Button>
             <Button variant="dark">Edit</Button>
           </div>
         </Card.Body>

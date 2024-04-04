@@ -1,0 +1,52 @@
+{
+  "rentals": [
+    {
+      "id": "8b7cf84f-7d6e-40e0-82f1-75255bc437a7",
+      "rentalName": "Qka kushta na slunchaka",
+      "rentalType": "House",
+      "bedroomsCount": 2,
+      "guestsCount": 4,
+      "mainImg": "https://a0.muscache.com/im/pictures/e06a9e10-6cd9-4648-bf01-e2bbfdb08b30.jpg?im_w=720",
+      "additionalInfo": "Mnogo izgodna oferta. Top lokaciq. V kushtata ima 2 spalni i 1 banq",
+      "address": "ul. Slunchaka 3, Slunchev brqg",
+      "pricePerNight": 120,
+      "isRented": false
+    },
+    {
+      "id": "bdb1ef7c-fec3-4348-b576-f8f74544c4d",
+      "rentalName": "Qka kushta na slunchaka",
+      "rentalType": "House",
+      "bedroomsCount": 2,
+      "guestsCount": 4,
+      "mainImg": "https://a0.muscache.com/im/pictures/e06a9e10-6cd9-4648-bf01-e2bbfdb08b30.jpg?im_w=720",
+      "additionalInfo": "Mnogo izgodna oferta. Top lokaciq. V kushtata ima 2 spalni i 1 banq",
+      "address": "ul. Slunchaka 3, Slunchev brqg",
+      "pricePerNight": 120,
+      "isRented": false
+    },
+    {
+      "id": "bfe22028-7ea5-42d6-b4de-f0e23d931d53",
+      "rentalName": "Qka kushta na slunchaka",
+      "rentalType": "House",
+      "bedroomsCount": 2,
+      "guestsCount": 4,
+      "mainImg": "https://a0.muscache.com/im/pictures/e06a9e10-6cd9-4648-bf01-e2bbfdb08b30.jpg?im_w=720",
+      "additionalInfo": "Mnogo izgodna oferta. Top lokaciq. V kushtata ima 2 spalni i 1 banq",
+      "address": "ul. Slunchaka 3, Slunchev brqg",
+      "pricePerNight": 120,
+      "isRented": false
+    },
+    {
+      "id": "6a4a6e0d-079d-44c4-9065-1cc6fda93dc6",
+      "rentalName": "Qka kushta na slunchaka",
+      "rentalType": "House",
+      "bedroomsCount": 2,
+      "guestsCount": 4,
+      "mainImg": "https://a0.muscache.com/im/pictures/e06a9e10-6cd9-4648-bf01-e2bbfdb08b30.jpg?im_w=720",
+      "additionalInfo": "Mnogo izgodna oferta. Top lokaciq. V kushtata ima 2 spalni i 1 banq",
+      "address": "ul. Slunchaka 3, Slunchev brqg",
+      "pricePerNight": 120,
+      "isRented": false
+    }
+  ]
+}
