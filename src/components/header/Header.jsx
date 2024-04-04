@@ -2,25 +2,27 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './Header.css';
-import Logo from '../../img/logo.png'; 
+import Logo from '../../img/logo.png';
+import { Link } from 'react-router-dom';
 
 export function Header() {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
         <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+          <Link to="/rentals/add" className="nav-link">
+            Add Offer
+          </Link>
         </Nav>
         <Container className="justify-content-center">
-        <Navbar.Brand href="#home" className="mx-auto">
-          <img
-            src={Logo}
-            height="60%"
-            alt="HomeFinder Logo"
-          />
-        </Navbar.Brand>
+          <Navbar.Brand className="mx-auto">
+            <Link to="/">
+              <img src={Logo} height="60%" alt="HomeFinder Logo" />
+            </Link>
+          </Navbar.Brand>
         </Container>
       </Container>
     </Navbar>
