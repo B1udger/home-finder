@@ -4,7 +4,7 @@ import { Main } from './components/main/Main';
 import { Layout } from './components/layout/Layout';
 import { RentalForm } from './components/rentals/rental-form/RentalForm';
 import { UserForm } from './components/users/user-form/UserForm';
-import { Login } from './components/auth/login/Login';
+import { Login } from './components/login/Login';
 
 function App() {
   return (
