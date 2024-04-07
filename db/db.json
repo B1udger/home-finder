@@ -48,5 +48,37 @@
       "pricePerNight": 120,
       "isRented": false
     }
+  ],
+  "users": [
+    {
+      "id": "4fc41ab6-2159-4602-9a5f-db9d8a7a29d8",
+      "picture": "https://picsum.photos/300/200?random=1",
+      "name": "Lester Curtis",
+      "password": "user1",
+      "email": "user1@user1.com",
+      "phone": "+1 (938) 581-3473",
+      "isAdmin": false,
+      "address": "856 Interborough Parkway, Gila, Maryland, 9124"
+    },
+    {
+      "id": "ff188f74-4eb6-478c-bb04-c003ebc9625e",
+      "picture": "https://picsum.photos/300/200?random=2",
+      "name": "Carter Gates",
+      "password": "user2",
+      "email": "user2@user2.com",
+      "phone": "+1 (854) 436-3066",
+      "isAdmin": false,
+      "address": "923 Devon Avenue, Fedora, New Mexico, 881"
+    },
+    {
+      "id": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "picture": "https://picsum.photos/300/200?random=5",
+      "name": "Admin Administrator1",
+      "password": "admin",
+      "email": "admin@admin.com",
+      "phone": "+1 (801) 557-3305",
+      "isAdmin": true,
+      "address": "837 Macon Street, Orviston, Delaware, 8401"
+    }
   ]
 }

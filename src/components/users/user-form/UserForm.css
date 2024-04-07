@@ -1,0 +1,13 @@
+.user-form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.user-form-wrapper form {
+  border: 1px solid gray;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+}

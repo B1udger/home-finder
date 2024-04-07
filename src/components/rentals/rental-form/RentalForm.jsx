@@ -1,8 +1,11 @@
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './RentalForm.css';
+import { useParams } from 'react-router-dom';
+import { getRentalById } from '../../../services/rentals-service';
 
 export function RentalForm() {
+  const params = useParams();
   const [rental, setRental] = useState({
     rentalName: '',
     rentalType: '',
@@ -13,6 +16,25 @@ export function RentalForm() {
     address: '',
     pricePerNight: '',
   });
+
+  useEffect(() => {
+    if (params.id) {
+      getRentalById(params.id).then((res) => {
+        setRental(res.data);
+      });
+    } else {
+      setRental({
+        rentalName: '',
+        rentalType: '',
+        bedroomsCount: '',
+        guestsCount: '',
+        mainImg: '',
+        additionalInfo: '',
+        address: '',
+        pricePerNight: '',
+      });
+    }
+  }, [params.id]);
 
   const onInputChange = (e) => {
     setRental((prevState) => ({
@@ -30,6 +52,7 @@ export function RentalForm() {
   return (
     <div className="rental-form-wrapper">
       <Form onSubmit={handleSubmit}>
+        <h3>{rental.id ? 'Edit' : 'Create'}</h3>
         <Form.Group className="mb-3" controlId="formBasicName">
           <FloatingLabel label="Name">
             <Form.Control

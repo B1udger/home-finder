@@ -1,0 +1,20 @@
+.login-form-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form-wrapper form {
+  border: 1px solid gray;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+}
+
+.login-form-wrapper a {
+  display: block;
+  text-decoration: none;
+  color: gray;
+  margin-top: 20px;
+}

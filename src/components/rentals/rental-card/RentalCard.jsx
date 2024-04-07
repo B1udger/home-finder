@@ -1,7 +1,20 @@
 import { Button, Card } from 'react-bootstrap';
 import './RentalCard.css';
+import { getLoggedUser } from '../../../services/users-service';
+import { useNavigate } from 'react-router-dom';
 
 export function RentalCard({ rental, handleDelete }) {
+  const loggedUser = getLoggedUser();
+  const navigate = useNavigate();
+
+  function navigateToLogin() {
+    navigate('/login');
+  }
+
+  function navigateToEdit() {
+    navigate(`/rentals/edit/${rental.id}`);
+  }
+
   return (
     <div className="rental-card">
       <Card style={{ width: '18rem' }}>
@@ -29,12 +42,21 @@ export function RentalCard({ rental, handleDelete }) {
             <span className="value">{`${rental.pricePerNight} lv.`} </span>
           </Card.Text>
           <div className="btn-holder">
-            <Button variant="primary">Rent</Button>
+            {loggedUser ? (
+              <Button variant="primary">Rent</Button>
+            ) : (
+              <Button variant="primary" onClick={navigateToLogin}>
+                Login
+              </Button>
+            )}
+
             <Button variant="info">More info</Button>
             <Button variant="danger" onClick={() => handleDelete(rental.id)}>
               Delete
             </Button>
-            <Button variant="dark">Edit</Button>
+            <Button variant="dark" onClick={navigateToEdit}>
+              Edit
+            </Button>
           </div>
         </Card.Body>
       </Card>
