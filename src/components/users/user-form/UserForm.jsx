@@ -25,19 +25,29 @@ export function UserForm() {
   });
 
   useEffect(() => {
-    if (params.id) {
-      getUserById(params.id).then((res) => {
+    const fetchUser = async () => {
+      try {
+        const res = await getUserById(params.id);
         setUser(res.data);
-      });
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    if (params.id) {
+      fetchUser();
     }
   }, [params.id]);
 
-  function onFormSubmit(e) {
+  async function onFormSubmit(e) {
     e.preventDefault();
 
-    saveUser(user).then(() => {
+    try {
+      await saveUser(user);
       navigate('/');
-    });
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   function onInputChange(e) {
