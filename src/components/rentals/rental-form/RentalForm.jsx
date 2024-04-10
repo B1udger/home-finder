@@ -106,8 +106,9 @@ export function RentalForm() {
 
           await saveImageInDb(img);
         }
-        navigate('/');
       }
+
+      navigate('/');
     } catch (error) {
       console.error(error);
     }

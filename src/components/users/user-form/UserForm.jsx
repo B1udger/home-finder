@@ -42,6 +42,11 @@ export function UserForm() {
   async function onFormSubmit(e) {
     e.preventDefault();
 
+    if (!loggedUser) {
+      navigate('/login');
+      return;
+    }
+
     try {
       await saveUser(user);
       navigate('/');
@@ -67,7 +72,7 @@ export function UserForm() {
   return (
     <div className="user-form-wrapper">
       <Form onSubmit={onFormSubmit}>
-        <h3>{pathname === '/register' ? 'Register' : 'Create user'}</h3>
+        <h3>{pathname === '/register' ? 'Register' : 'Add user'}</h3>
 
         <Form.Group className="mb-3" controlId="formBasicName">
           <FloatingLabel label="Name">

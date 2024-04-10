@@ -11,7 +11,7 @@ export function Header({ isLogged, logoutHandler }) {
       <Container>
         <Nav className="me-auto">
           <Link to="/" className="nav-link">
-            Home
+            Offers
           </Link>
 
           {!isLogged ? (
@@ -20,9 +20,22 @@ export function Header({ isLogged, logoutHandler }) {
             </Link>
           ) : (
             <>
+              <Link to={`/user/${isLogged.id}`} className="nav-link">
+                My profile
+              </Link>
               <Link to="/rentals/add" className="nav-link">
                 Add Offer
               </Link>
+              {isLogged.isAdmin && (
+                <>
+                  <Link to="/users" className="nav-link">
+                    Users
+                  </Link>
+                  <Link to="/users/add" className="nav-link">
+                    Add User
+                  </Link>
+                </>
+              )}
               <Link className="nav-link" onClick={logoutHandler}>
                 Logout
               </Link>

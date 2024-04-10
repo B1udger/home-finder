@@ -28,13 +28,14 @@ export function RentalsList() {
 
   async function deleteRental(id) {
     try {
-      await deleteRentalById(id);
       const res = await getImagesByRentalId(id);
       const rentalImages = res.data;
 
       for (let i = 0; i < rentalImages.length; i++) {
         await deleteImageById(rentalImages[i].id);
       }
+
+      await deleteRentalById(id);
 
       setRentals((prevState) => {
         return prevState.filter((r) => r.id !== id);

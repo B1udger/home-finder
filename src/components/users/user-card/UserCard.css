@@ -1,11 +1,10 @@
-.key,
-.title {
+.key {
   font-weight: bold;
 }
 
 .btn-holder {
   button {
-    margin: 5px;
+    margin: 10px;
   }
 }
 
@@ -13,6 +12,10 @@
   margin: 20px;
 }
 
-.card-img {
-  height: 190px;
+.yes {
+  color: green;
+}
+
+.no {
+  color: red;
 }

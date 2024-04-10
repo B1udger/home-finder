@@ -3,13 +3,101 @@
     {
       "id": "96e2",
       "rentalName": "Studio Sky City",
-      "rentalType": "Apartment",
+      "rentalType": "Studio",
       "bedroomsCount": "1",
       "guestsCount": "2",
       "additionalInfo": "Unique Design Studio by SkyCity mall. It's brand new, cozy and calm. We have 300 Mb/ps Wi Fi + 55'' Smart TV. Perfect for Solo, Couples or Business Visitors",
       "address": "Sofia Center, \"Strandzha\" St 56, 1303 Sofia",
       "pricePerNight": "75",
       "isRented": false
+    },
+    {
+      "id": "5ce6",
+      "rentalName": "Boykovets's pearl",
+      "rentalType": "House",
+      "bedroomsCount": "2",
+      "guestsCount": "4",
+      "additionalInfo": "Make some memories at this unique and family-friendly place. In a beautiful green village 10 min drive from Etrople,(supermarket, resturant )  600 meters from  horses cows and chips  you can enjoy nature, listen to the river in the garden enjoy quiet and peaceful sound re-charge yourself ",
+      "address": "ul. \"Hristo Botev\" 22, Boykovets",
+      "pricePerNight": "117",
+      "isRented": false
+    },
+    {
+      "id": "bdd5",
+      "rentalName": "Merkaz Hair Sofia",
+      "rentalType": "Apartment",
+      "bedroomsCount": "2",
+      "guestsCount": "4",
+      "additionalInfo": "Newly renovated luxurious apartment situated in a 1931 historic building in Sofia's very center. Next door are all the best clubs, bars and gourmet restaurants. A 3 minute walk from Vitosha Blvd. and NDK. Good for business travelers, couples and families.",
+      "address": "Sofia Center, ul. \"Veslets\" 22, 1000 Sofia",
+      "pricePerNight": "130",
+      "isRented": false
+    },
+    {
+      "id": "7315",
+      "rentalName": "Soul Apartment",
+      "rentalType": "Apartment",
+      "bedroomsCount": "1",
+      "guestsCount": "2",
+      "additionalInfo": "The apartment is located in the center of the ancient city of Plovdiv, just 5 minutes from the main street and the Kapana district, as well as 10 minutes from the Plovdiv Fair and the Old Town. The apartment is quiet, spacious and equipped with everything you need",
+      "address": "ul. \"Preslav\" 13, 4000 Plovdiv",
+      "pricePerNight": "100",
+      "isRented": false
+    },
+    {
+      "id": "fb5b",
+      "rentalName": "LOFT Nomad studio",
+      "rentalType": "Studio",
+      "bedroomsCount": "1",
+      "guestsCount": "2",
+      "additionalInfo": "Our LOFT Nomad studio is located in the very heart of the city center - The Kapana District! Our dream came to live with our LOFT Studio. Located on the top floor, the studio provides all the comforts once might need. Add to this a spacious terrace overlooking the Old Town and City center.",
+      "address": "ul. \"Zlatarska\" 26, 4000 Plovdiv",
+      "pricePerNight": "255",
+      "isRented": false
+    },
+    {
+      "id": "dfe5",
+      "rentalName": "Sea apartment Lazur",
+      "rentalType": "Apartment",
+      "bedroomsCount": "2",
+      "guestsCount": "4",
+      "additionalInfo": "Apartment Lazur is newly furnished and comfortable, with the best location - within walking distance from the sea and the beach, as well as to the city center",
+      "address": "Burgas Center, ul. \"Ekzarh Yosif\" 36, 8000 Burgas",
+      "pricePerNight": "78",
+      "isRented": false
+    },
+    {
+      "id": "30a6",
+      "rentalName": "Studio Marrone",
+      "rentalType": "Studio",
+      "bedroomsCount": "2",
+      "guestsCount": "3",
+      "additionalInfo": "Enjoy a stylish experience at this centrally-located place, just a three minutes walk away from the beach. You will be staying in the heart of the city, just steps away from the best restaurants, bars, the central beach and the sea garden.",
+      "address": "ul. \"Petko Karavelov\" 28, 8000 Burgas",
+      "pricePerNight": "125",
+      "isRented": false
+    },
+    {
+      "id": "95e9",
+      "rentalName": "Central Park Apartament",
+      "rentalType": "Apartment",
+      "bedroomsCount": "2",
+      "guestsCount": "4",
+      "additionalInfo": "Close to a large park in the heart of Burgas, the newest swimming complex Arena and Mall Galleria Burgas. The apartment has a spacious and bright living room with an open-air kitchenette, private bedroom, bathroom with toilet, terrace to walk out of both rooms.",
+      "address": "bul. \"San Stefano\" 28, 8001 Burgas",
+      "pricePerNight": "86",
+      "isRented": false
+    },
+    {
+      "id": "26a3",
+      "rentalName": "Villa Romantica",
+      "rentalType": "House",
+      "bedroomsCount": "2",
+      "guestsCount": "2",
+      "additionalInfo": "The exclusive, stylish cottage is a combination of a warm ambience and the highest level of comfort. The cottage is comfortable and modernly furnished. With the outdoor pool you can relax in sun loungers.",
+      "address": "ul. \"D-r Kiril Yordanov\", 9010 Varna",
+      "pricePerNight": "290",
+      "isRented": true
     }
   ],
   "users": [
@@ -44,7 +132,16 @@
       "address": "837 Macon Street, Orviston, Delaware, 8401"
     }
   ],
-  "rents": [],
+  "rents": [
+    {
+      "id": "36a9",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "26a3",
+      "startDate": "2024-04-10",
+      "endDate": "2024-04-12",
+      "total": "580.00"
+    }
+  ],
   "images": [
     {
       "id": "248c",
@@ -65,6 +162,174 @@
       "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
       "rentalId": "96e2",
       "publicId": "w5urrcff7lowsoynktcy",
+      "thumbnail": false
+    },
+    {
+      "id": "1620",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "5ce6",
+      "publicId": "tldn67svzvptdi0ftaoy",
+      "thumbnail": true
+    },
+    {
+      "id": "c500",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "5ce6",
+      "publicId": "mvpelw0yguo4ybk6q8ez",
+      "thumbnail": false
+    },
+    {
+      "id": "96e3",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "5ce6",
+      "publicId": "j3suhyaonbwcx32pzutc",
+      "thumbnail": false
+    },
+    {
+      "id": "f53f",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "bdd5",
+      "publicId": "tr46axnezkfmavaxan3n",
+      "thumbnail": true
+    },
+    {
+      "id": "3f09",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "bdd5",
+      "publicId": "st6gemjdj3bvlchi07de",
+      "thumbnail": false
+    },
+    {
+      "id": "cedc",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "bdd5",
+      "publicId": "jygtuqjygixh0bo7kehg",
+      "thumbnail": false
+    },
+    {
+      "id": "cf4a",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "7315",
+      "publicId": "zfefyghqp7k5rtypse1t",
+      "thumbnail": true
+    },
+    {
+      "id": "14d1",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "7315",
+      "publicId": "vsbdfayiuywxeatzayns",
+      "thumbnail": false
+    },
+    {
+      "id": "997a",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "7315",
+      "publicId": "eskfk6x8yudzgruk43h1",
+      "thumbnail": false
+    },
+    {
+      "id": "286c",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "fb5b",
+      "publicId": "yazso9ghzvwwtoaw6n6u",
+      "thumbnail": true
+    },
+    {
+      "id": "75b7",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "fb5b",
+      "publicId": "jpvohgxpi15hqbtqi3ow",
+      "thumbnail": false
+    },
+    {
+      "id": "2a19",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "fb5b",
+      "publicId": "jjw1lqoel9eslqi7jfgl",
+      "thumbnail": false
+    },
+    {
+      "id": "62b2",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "dfe5",
+      "publicId": "mhqcmgblh9bpz4gpzvtw",
+      "thumbnail": true
+    },
+    {
+      "id": "5283",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "dfe5",
+      "publicId": "hv7pcvume2gvdr3spfkk",
+      "thumbnail": false
+    },
+    {
+      "id": "5664",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "dfe5",
+      "publicId": "gapf6rbdmxuowaezd3pt",
+      "thumbnail": false
+    },
+    {
+      "id": "175f",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "30a6",
+      "publicId": "psd09zhn9ksseanz4tu4",
+      "thumbnail": true
+    },
+    {
+      "id": "9b20",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "30a6",
+      "publicId": "khyzljec1kbs2fn1fhog",
+      "thumbnail": false
+    },
+    {
+      "id": "3f25",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "30a6",
+      "publicId": "icpg8sj4ivwvuh3a5hgr",
+      "thumbnail": false
+    },
+    {
+      "id": "6df4",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "95e9",
+      "publicId": "aqpvsgezp8hagczoclrk",
+      "thumbnail": true
+    },
+    {
+      "id": "f8aa",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "95e9",
+      "publicId": "vfdqjtg2dkbo4hxvagco",
+      "thumbnail": false
+    },
+    {
+      "id": "0f34",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "95e9",
+      "publicId": "kzpknv5qsx74yncbq08i",
+      "thumbnail": false
+    },
+    {
+      "id": "5a06",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "26a3",
+      "publicId": "rv2mnbljspoef9wwwv8y",
+      "thumbnail": true
+    },
+    {
+      "id": "75bd",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "26a3",
+      "publicId": "moz9vrevwyzpxmwlj95z",
+      "thumbnail": false
+    },
+    {
+      "id": "15e8",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "26a3",
+      "publicId": "smymdahywbilxkqdipcx",
       "thumbnail": false
     }
   ]

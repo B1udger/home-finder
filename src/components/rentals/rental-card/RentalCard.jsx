@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { getImagesByRentalId } from '../../../services/image-service';
 import { getCloudinaryImg } from '../../../utils/helpers';
 
-export function RentalCard({ rental, handleDelete }) {
+export function RentalCard({ rental, handleDelete, isInRentInfo }) {
   const [thumbnailImgId, setThumbnailImgId] = useState();
   const loggedUser = getLoggedUser();
   const navigate = useNavigate();
@@ -68,31 +68,35 @@ export function RentalCard({ rental, handleDelete }) {
             <span className="key">Price per night: </span>
             <span className="value">{`${rental.pricePerNight} lv.`} </span>
           </Card.Text>
-          <div className="btn-holder">
-            {loggedUser ? (
-              <Button variant="primary" onClick={navigateToInfo}>
-                Rent
-              </Button>
-            ) : (
-              <Button variant="primary" onClick={navigateToLogin}>
-                Login
-              </Button>
-            )}
+          {!isInRentInfo && (
+            <>
+              <div className="btn-holder">
+                {loggedUser ? (
+                  <Button variant="primary" onClick={navigateToInfo}>
+                    Rent
+                  </Button>
+                ) : (
+                  <Button variant="primary" onClick={navigateToLogin}>
+                    Login
+                  </Button>
+                )}
 
-            {loggedUser && loggedUser.isAdmin && (
-              <div>
-                <Button
-                  variant="danger"
-                  onClick={() => handleDelete(rental.id)}
-                >
-                  Delete
-                </Button>
-                <Button variant="dark" onClick={navigateToEdit}>
-                  Edit
-                </Button>
+                {loggedUser && loggedUser.isAdmin && (
+                  <div>
+                    <Button
+                      variant="danger"
+                      onClick={() => handleDelete(rental.id)}
+                    >
+                      Delete
+                    </Button>
+                    <Button variant="dark" onClick={navigateToEdit}>
+                      Edit
+                    </Button>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
+            </>
+          )}
         </Card.Body>
       </Card>
     </div>
