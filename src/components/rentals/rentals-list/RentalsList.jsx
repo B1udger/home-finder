@@ -5,24 +5,44 @@ import {
   deleteRentalById,
   getAllRentals,
 } from '../../../services/rentals-service';
+import {
+  deleteImageById,
+  getImagesByRentalId,
+} from '../../../services/image-service';
 
 export function RentalsList() {
   const [rentals, setRentals] = useState([]);
 
   useEffect(() => {
-    getAllRentals().then((res) => {
-      setRentals(res.data);
-    });
+    const fetchRentals = async () => {
+      try {
+        const res = await getAllRentals();
+        setRentals(res.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchRentals();
   }, []);
 
-  function deleteRental(id) {
-    deleteRentalById(id)
-      .then(() => {
-        setRentals((prevState) => {
-          return prevState.filter((r) => r.id !== id);
-        });
-      })
-      .catch((err) => console.error(err));
+  async function deleteRental(id) {
+    try {
+      const res = await getImagesByRentalId(id);
+      const rentalImages = res.data;
+
+      for (let i = 0; i < rentalImages.length; i++) {
+        await deleteImageById(rentalImages[i].id);
+      }
+
+      await deleteRentalById(id);
+
+      setRentals((prevState) => {
+        return prevState.filter((r) => r.id !== id);
+      });
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   return (

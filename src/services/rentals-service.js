@@ -3,22 +3,23 @@ import { globalConstants } from '../utils/constants';
 
 const apiUrl = `${globalConstants.API_URL}/rentals`;
 
-export function getAllRentals() {
+export async function getAllRentals() {
   return axios.get(apiUrl);
 }
 
-export function getRentalById(id) {
+export async function getRentalById(id) {
   return axios.get(`${apiUrl}/${id}`);
 }
 
-export function deleteRentalById(id) {
+export async function deleteRentalById(id) {
   return axios.delete(`${apiUrl}/${id}`);
 }
 
-export function saveRental(rental) {
+export async function saveRental(rental) {
   if (rental.id) {
-    return axios.put(`${apiUrl}/${rental.id}`);
+    return axios.put(`${apiUrl}/${rental.id}`, rental);
   }
 
+  rental.isRented = false;
   return axios.post(apiUrl, rental);
 }

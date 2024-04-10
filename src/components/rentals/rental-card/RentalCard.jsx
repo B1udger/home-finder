@@ -2,10 +2,29 @@ import { Button, Card } from 'react-bootstrap';
 import './RentalCard.css';
 import { getLoggedUser } from '../../../services/users-service';
 import { useNavigate } from 'react-router-dom';
+import { AdvancedImage } from '@cloudinary/react';
+import { useEffect, useState } from 'react';
+import { getImagesByRentalId } from '../../../services/image-service';
+import { getCloudinaryImg } from '../../../utils/helpers';
 
-export function RentalCard({ rental, handleDelete }) {
+export function RentalCard({ rental, handleDelete, isInRentInfo }) {
+  const [thumbnailImgId, setThumbnailImgId] = useState();
   const loggedUser = getLoggedUser();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchThumbnailImage = async () => {
+      try {
+        const res = await getImagesByRentalId(rental.id);
+        const thumbnailImgId = res.data.filter((i) => i.thumbnail)[0].publicId;
+        setThumbnailImgId(thumbnailImgId);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchThumbnailImage();
+  }, [rental.id]);
 
   function navigateToLogin() {
     navigate('/login');
@@ -15,10 +34,18 @@ export function RentalCard({ rental, handleDelete }) {
     navigate(`/rentals/edit/${rental.id}`);
   }
 
+  function navigateToInfo() {
+    navigate(`/rentals/info/${rental.id}`);
+  }
+
   return (
     <div className="rental-card">
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={rental.mainImg} />
+        <AdvancedImage
+          className="card-img card-img-top"
+          cldImg={getCloudinaryImg(thumbnailImgId)}
+        />
+
         <Card.Body>
           <Card.Title className="title">{rental.rentalName}</Card.Title>
           <Card.Text>
@@ -41,23 +68,35 @@ export function RentalCard({ rental, handleDelete }) {
             <span className="key">Price per night: </span>
             <span className="value">{`${rental.pricePerNight} lv.`} </span>
           </Card.Text>
-          <div className="btn-holder">
-            {loggedUser ? (
-              <Button variant="primary">Rent</Button>
-            ) : (
-              <Button variant="primary" onClick={navigateToLogin}>
-                Login
-              </Button>
-            )}
+          {!isInRentInfo && (
+            <>
+              <div className="btn-holder">
+                {loggedUser ? (
+                  <Button variant="primary" onClick={navigateToInfo}>
+                    Rent
+                  </Button>
+                ) : (
+                  <Button variant="primary" onClick={navigateToLogin}>
+                    Login
+                  </Button>
+                )}
 
-            <Button variant="info">More info</Button>
-            <Button variant="danger" onClick={() => handleDelete(rental.id)}>
-              Delete
-            </Button>
-            <Button variant="dark" onClick={navigateToEdit}>
-              Edit
-            </Button>
-          </div>
+                {loggedUser && loggedUser.isAdmin && (
+                  <div>
+                    <Button
+                      variant="danger"
+                      onClick={() => handleDelete(rental.id)}
+                    >
+                      Delete
+                    </Button>
+                    <Button variant="dark" onClick={navigateToEdit}>
+                      Edit
+                    </Button>
+                  </div>
+                )}
+              </div>
+            </>
+          )}
         </Card.Body>
       </Card>
     </div>
