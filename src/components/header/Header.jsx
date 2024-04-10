@@ -4,25 +4,42 @@ import Navbar from 'react-bootstrap/Navbar';
 import './Header.css';
 import Logo from '../../img/logo.png';
 import { Link } from 'react-router-dom';
-import { getLoggedUser } from '../../services/users-service';
 
-export function Header() {
-  const loggedUser = getLoggedUser();
-
+export function Header({ isLogged, logoutHandler }) {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
         <Nav className="me-auto">
           <Link to="/" className="nav-link">
-            Home
+            Offers
           </Link>
-          <Link to="/rentals/add" className="nav-link">
-            Add Offer
-          </Link>
-          {!loggedUser && (
+
+          {!isLogged ? (
             <Link to="/login" className="nav-link">
               Login
             </Link>
+          ) : (
+            <>
+              <Link to={`/user/${isLogged.id}`} className="nav-link">
+                My profile
+              </Link>
+              <Link to="/rentals/add" className="nav-link">
+                Add Offer
+              </Link>
+              {isLogged.isAdmin && (
+                <>
+                  <Link to="/users" className="nav-link">
+                    Users
+                  </Link>
+                  <Link to="/users/add" className="nav-link">
+                    Add User
+                  </Link>
+                </>
+              )}
+              <Link className="nav-link" onClick={logoutHandler}>
+                Logout
+              </Link>
+            </>
           )}
         </Nav>
         <Container className="justify-content-center">

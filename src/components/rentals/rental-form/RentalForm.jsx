@@ -1,34 +1,51 @@
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import './RentalForm.css';
-import { useParams } from 'react-router-dom';
-import { getRentalById } from '../../../services/rentals-service';
+import { useNavigate, useParams } from 'react-router-dom';
+import { getRentalById, saveRental } from '../../../services/rentals-service';
+import {
+  deleteImageById,
+  getImagesByRentalId,
+  postImageToAPI,
+  saveImageInDb,
+} from '../../../services/image-service';
+import { getLoggedUser } from '../../../services/users-service';
+import { rentalTypes } from '../../../utils/constants';
 
 export function RentalForm() {
+  const loggedUser = getLoggedUser();
+  const navigate = useNavigate();
   const params = useParams();
+  const [fieldErrors, setFieldErrors] = useState({});
+  const [images, setImages] = useState([]);
   const [rental, setRental] = useState({
     rentalName: '',
     rentalType: '',
     bedroomsCount: '',
     guestsCount: '',
-    mainImg: '',
     additionalInfo: '',
     address: '',
     pricePerNight: '',
   });
 
   useEffect(() => {
-    if (params.id) {
-      getRentalById(params.id).then((res) => {
+    const fetchRental = async () => {
+      try {
+        const res = await getRentalById(params.id);
         setRental(res.data);
-      });
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    if (params.id) {
+      fetchRental();
     } else {
       setRental({
         rentalName: '',
-        rentalType: '',
+        rentalType: rentalTypes.APARTMENT,
         bedroomsCount: '',
         guestsCount: '',
-        mainImg: '',
         additionalInfo: '',
         address: '',
         pricePerNight: '',
@@ -43,10 +60,75 @@ export function RentalForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(rental);
+    if (!loggedUser) {
+      navigate('/login');
+      return;
+    }
+
+    const currFieldErrs = validate(rental);
+    setFieldErrors(currFieldErrs);
+
+    if (Object.keys(currFieldErrs).length) {
+      return;
+    }
+
+    try {
+      const rentalID = (await saveRental(rental)).data.id;
+
+      if (e.target.querySelector('input[type="file"]').files.length !== 0) {
+        //delete old images in the db after edit and selection of new ones for the rental
+        if (params.id) {
+          const res = await getImagesByRentalId(rentalID);
+          const oldImagesData = res.data;
+
+          for (let i = 0; i < oldImagesData.length; i++) {
+            await deleteImageById(oldImagesData[i].id);
+          }
+        }
+
+        //send Images to Cloudinary
+        const formData = new FormData();
+        for (let i = 0; i < images.length; i++) {
+          let file = images[i];
+          formData.append('file', file);
+          formData.append('upload_preset', 'hur85tvb');
+
+          const response = await postImageToAPI(formData);
+          const img = {
+            userId: loggedUser.id,
+            rentalId: rentalID,
+            publicId: response.data.public_id,
+            thumbnail: i === 0 ? true : false,
+          };
+
+          await saveImageInDb(img);
+        }
+      }
+
+      navigate('/');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const validate = (rental) => {
+    const errors = {};
+    if (rental.bedroomsCount < 0)
+      errors.bedroomsCount =
+        'The number of bedrooms must be a positive number!';
+    if (rental.guestsCount < 0)
+      errors.guestsCount = 'The number of guests must be a positive number!';
+    if (rental.pricePerNight < 0)
+      errors.pricePerNight = 'Price per night must be a positive number!';
+
+    return errors;
+  };
+
+  const handleImageSelection = (e) => {
+    setImages(e.target.files);
   };
 
   return (
@@ -74,15 +156,11 @@ export function RentalForm() {
               value={rental.rentalType}
               onChange={onInputChange}
             >
-              <option key="test1" value="Test 1">
-                Test 1
-              </option>
-              <option key="test2" value="Test 2">
-                Test 2
-              </option>
-              <option key="test3" value="Test 3">
-                Test 3
-              </option>
+              {Object.entries(rentalTypes).map(([key, value]) => (
+                <option key={key} value={value}>
+                  {value}
+                </option>
+              ))}
             </Form.Select>
           </FloatingLabel>
         </Form.Group>
@@ -111,6 +189,9 @@ export function RentalForm() {
               required
             />
           </FloatingLabel>
+          {fieldErrors.bedroomsCount && (
+            <span className="text-danger">{fieldErrors.bedroomsCount}</span>
+          )}
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicGuestsCount">
@@ -124,19 +205,26 @@ export function RentalForm() {
               required
             />
           </FloatingLabel>
+          {fieldErrors.guestsCount && (
+            <span className="text-danger">{fieldErrors.guestsCount}</span>
+          )}
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicMainImg">
-          <FloatingLabel label="Main Image URL">
-            <Form.Control
-              type="url"
-              placeholder="Main Image URL"
-              name="mainImg"
-              value={rental.mainImg}
-              onChange={onInputChange}
-              required
-            />
-          </FloatingLabel>
+        <Form.Group controlId="formFileMultiple" className="mb-3">
+          <Form.Label>Images</Form.Label>
+          <Form.Control
+            type="file"
+            multiple
+            accept="image/*"
+            onChange={handleImageSelection}
+            {...(!params.id && { required: true })}
+          />
+          {params.id && (
+            <p className="mb-0 text-danger">
+              If you click this, the old ones will be removed!
+            </p>
+          )}
+          <span>First chosen image will be thumbnail</span>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicInfo">
@@ -162,6 +250,9 @@ export function RentalForm() {
               required
             />
           </FloatingLabel>
+          {fieldErrors.pricePerNight && (
+            <span className="text-danger">{fieldErrors.pricePerNight}</span>
+          )}
         </Form.Group>
 
         <Button variant="primary" type="submit">

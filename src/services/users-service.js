@@ -3,19 +3,19 @@ import { globalConstants } from '../utils/constants';
 
 const apiUrl = `${globalConstants.API_URL}/users`;
 
-export function getAllUsers() {
+export async function getAllUsers() {
   return axios.get(apiUrl);
 }
 
-export function getUserById(id) {
+export async function getUserById(id) {
   return axios.get(`${apiUrl}/${id}`);
 }
 
-export function deleteUser(id) {
+export async function deleteUser(id) {
   return axios.delete(`${apiUrl}/${id}`);
 }
 
-export function saveUser(user) {
+export async function saveUser(user) {
   if (!user.picture) {
     user.picture = `https://picsum.photos/200/300?random=${Math.random()}`;
   }

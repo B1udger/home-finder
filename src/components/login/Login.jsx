@@ -12,16 +12,15 @@ export function Login() {
     password: '',
   });
 
-  function onFormSubmit(e) {
+  async function onFormSubmit(e) {
     e.preventDefault();
 
-    login(user)
-      .then(() => {
-        navigate('/');
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
+    try {
+      await login(user);
+      navigate('/');
+    } catch (err) {
+      setError(err.message);
+    }
   }
 
   const onInputChange = (e) => {

@@ -25,19 +25,34 @@ export function UserForm() {
   });
 
   useEffect(() => {
-    if (params.id) {
-      getUserById(params.id).then((res) => {
+    const fetchUser = async () => {
+      try {
+        const res = await getUserById(params.id);
         setUser(res.data);
-      });
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    if (params.id) {
+      fetchUser();
     }
   }, [params.id]);
 
-  function onFormSubmit(e) {
+  async function onFormSubmit(e) {
     e.preventDefault();
 
-    saveUser(user).then(() => {
+    if (!loggedUser) {
+      navigate('/login');
+      return;
+    }
+
+    try {
+      await saveUser(user);
       navigate('/');
-    });
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   function onInputChange(e) {
@@ -57,7 +72,7 @@ export function UserForm() {
   return (
     <div className="user-form-wrapper">
       <Form onSubmit={onFormSubmit}>
-        <h3>{pathname === '/register' ? 'Register' : 'Create user'}</h3>
+        <h3>{pathname === '/register' ? 'Register' : 'Add user'}</h3>
 
         <Form.Group className="mb-3" controlId="formBasicName">
           <FloatingLabel label="Name">

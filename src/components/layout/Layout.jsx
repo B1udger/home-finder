@@ -1,11 +1,20 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from '../header/Header';
 import { Footer } from '../footer/footer';
+import { useState } from 'react';
+import { getLoggedUser, logout } from '../../services/users-service';
 
 export function Layout() {
+  const [isLogged, setIsLogged] = useState(getLoggedUser());
+
+  function logoutUser() {
+    logout();
+    setIsLogged(false);
+  }
+
   return (
     <div>
-      <Header />
+      <Header isLogged={isLogged} logoutHandler={logoutUser} />
       <Outlet />
       <Footer />
     </div>
