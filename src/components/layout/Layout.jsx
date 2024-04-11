@@ -3,7 +3,7 @@ import { Header } from '../header/Header';
 import { Footer } from '../footer/footer';
 import { useState } from 'react';
 import { getLoggedUser, logout } from '../../services/users-service';
-
+import './Layout.css';
 export function Layout() {
   const [isLogged, setIsLogged] = useState(getLoggedUser());
 
