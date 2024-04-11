@@ -18,7 +18,7 @@ body, html{
 }
 
 .footer div{
-    background-color: rgba(0,0,0,0.05);
+    background: linear-gradient(to right, #ff3b4f4d, #353030);
 }
 
 .text-reset{

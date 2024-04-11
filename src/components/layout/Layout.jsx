@@ -17,7 +17,9 @@ export function Layout() {
     <div className="page-container"> 
       <Header isLogged={isLogged} logoutHandler={logoutUser} />
       <div className="content"> 
+      <div className="content-inner">
         <Outlet />
+      </div>
       </div>
       <Footer />
     </div>
