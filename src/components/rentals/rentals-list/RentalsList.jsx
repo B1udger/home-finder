@@ -1,14 +1,8 @@
 import './RentalsList.css';
 import { useEffect, useState } from 'react';
 import { RentalCard } from '../rental-card/RentalCard';
-import {
-  deleteRentalById,
-  getAllRentals,
-} from '../../../services/rentals-service';
-import {
-  deleteImageById,
-  getImagesByRentalId,
-} from '../../../services/image-service';
+import { deleteRentalById,getAllRentals,} from '../../../services/rentals-service';
+import {deleteImageById,getImagesByRentalId,} from '../../../services/image-service';
 
 export function RentalsList() {
   const [rentals, setRentals] = useState([]);
@@ -44,8 +38,7 @@ export function RentalsList() {
       console.error(err);
     }
   }
-
-  return (
+ return (
     <div>
       <h2>Currently available rentals:</h2>
       <div className="rentals-list-wrapper">
@@ -62,3 +55,7 @@ export function RentalsList() {
     </div>
   );
 }
+
+
+
+
