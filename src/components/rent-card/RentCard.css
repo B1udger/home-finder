@@ -1,9 +1,60 @@
-.rent-card-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid grey;
-  border-radius: 15px;
-  margin: 20px;
-  padding: 20px;
+.rent-card-wrapper{
+  background-color:white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow:hidden;
+  margin: 16px;
+  display:flex;
+  flex-direction:column;
+}
+
+.rent-details{
+  padding: 16px;
+  border-top: 1px solid #eee;
+}
+
+.key{
+  font-size:0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.value{
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.rent-details .value{
+  font-weight: 700;
+}
+
+.rent-card-wrapper button{
+  
+  border:none;
+  padding: 8px 16px;
+  margin-top: 8px;
+  border-radius: 3px;
+  background-color: #ff5a5f;
+  color:white;
+  font-weight: 600;
+  cursor:pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.rent-card-wrapper a{
+  text-decoration: none;
+  color:white;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+@media(max-width: 768px){
+  .rent-card-wrapper{
+    margin: 16px auto;
+  }
 }

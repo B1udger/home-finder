@@ -102,3 +102,5 @@ export function RentalCard({ rental, handleDelete, isInRentInfo }) {
     </div>
   );
 }
+
+

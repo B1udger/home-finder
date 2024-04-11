@@ -1,4 +1,4 @@
-.rental-card{
+/*.rental-card{
   margin: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -65,4 +65,81 @@
 
 .button-hover{
   opacity: 0.8;
+}
+*/
+
+/* RentalCard.css */
+.rental-card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.rental-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-img-top {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 200px; 
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.btn-outline-primary {
+  border-color: #ff5a5f;
+  color: #ff5a5f;
+}
+
+.btn-outline-primary:hover {
+  background-color: #ff5a5f;
+  color: white;
+}
+
+.btn-outline-danger {
+  border-color: #ff5a5f;
+  color: #ff5a5f;
+}
+
+.btn-outline-danger:hover {
+  background-color: #ff5a5f;
+  color: white;
+}
+
+.btn-outline-secondary {
+  border-color: #ccc;
+  color: #333;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #ccc;
+  color: white;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.w-100 {
+  width: 100%;
 }
