@@ -1,4 +1,4 @@
-.rental-info-container {
+/*.rental-info-container {
   display: flex;
   flex-direction: column;
 }
@@ -33,4 +33,104 @@
 
 .rent-form .spans {
   padding: 10px;
+}
+*/
+
+.rental-info-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 32px auto;
+  padding: 24px;
+  background-color: #fff;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.11);
+  border-radius: 12px;
+  font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.rental-info-container h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.rental-info-container h5 {
+  font-size: 16px;
+  color: #767676;
+  margin-bottom: 16px;
+}
+
+.carousel {
+  margin-bottom: 24px;
+  border-radius: 12px;
+  overflow: hidden; 
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.inner-info {
+  padding: 16px 0;
+}
+
+.key {
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.value {
+  font-size: 14px;
+  color: #484848;
+}
+
+.rent-form {
+  border-top: 1px solid #ddd;
+  padding-top: 24px;
+}
+
+.text-danger {
+  color: #ff5a5f; 
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 16px !important;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 16px;
+}
+
+.button-primary {
+  background-color: #ff5a5f; 
+  border: none;
+  padding: 12px 24px;
+  margin-top: 16px;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-primary:hover {
+  background-color: #f53e42; 
+}
+
+@media (max-width: 768px) {
+  .rental-info-container {
+    padding: 16px;
+  }
 }

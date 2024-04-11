@@ -7,48 +7,34 @@ import { Link } from 'react-router-dom';
 
 export function Header({ isLogged, logoutHandler }) {
   return (
-    <Navbar bg="dark" data-bs-theme="dark">
+    <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Nav className="me-auto">
-          <Link to="/" className="nav-link">
-            Offers
-          </Link>
-
-          {!isLogged ? (
-            <Link to="/login" className="nav-link">
-              Login
-            </Link>
-          ) : (
-            <>
-              <Link to={`/user/${isLogged.id}`} className="nav-link">
-                My profile
-              </Link>
-              <Link to="/rentals/add" className="nav-link">
-                Add Offer
-              </Link>
-              {isLogged.isAdmin && (
-                <>
-                  <Link to="/users" className="nav-link">
-                    Users
-                  </Link>
-                  <Link to="/users/add" className="nav-link">
-                    Add User
-                  </Link>
-                </>
-              )}
-              <Link className="nav-link" onClick={logoutHandler}>
-                Logout
-              </Link>
-            </>
-          )}
-        </Nav>
-        <Container className="justify-content-center">
-          <Navbar.Brand className="mx-auto">
-            <Link to="/">
-              <img src={Logo} height="60%" alt="HomeFinder Logo" />
-            </Link>
-          </Navbar.Brand>
-        </Container>
+        <Navbar.Brand as={Link} to="/">
+          <img src={Logo} alt="HomeFinder Logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/" >Offers</Nav.Link>
+            <Nav.Link as={Link} to="/rentals/add" >Add Offer</Nav.Link>
+            {isLogged && isLogged.isAdmin && (
+              <>
+                <Nav.Link as={Link} to="/users" >Users</Nav.Link>
+                <Nav.Link as={Link} to="/users/add" >Add User</Nav.Link>
+              </>
+            )}
+          </Nav>
+          <Nav>
+            {isLogged ? (
+              <>
+                <Nav.Link as={Link} to={`/user/${isLogged.id}`} >My profile</Nav.Link>
+                <Nav.Link as={Link} to="/" onClick={logoutHandler}>Logout</Nav.Link>
+              </>
+            ) : (
+              <Nav.Link as={Link} to="/login" >Login</Nav.Link>
+            )}
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

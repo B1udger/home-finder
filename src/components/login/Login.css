@@ -1,20 +1,72 @@
 .login-form-wrapper {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  background-color: #f7f7f7; 
 }
 
-.login-form-wrapper form {
-  border: 1px solid gray;
-  padding: 20px;
-  border-radius: 10px;
-  width: 500px;
+.Form {
+  width: 100%;
+  max-width: 400px; 
+  padding: 2rem;
+  margin: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-.login-form-wrapper a {
+h3 {
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.Form .mb-3 {
+  margin-bottom: 1.5rem; 
+}
+
+.Form-Label, .FloatingLabel {
   display: block;
+  color: #333; 
+  margin-bottom: .5rem;
+}
+
+.Form-Control {
+  border: 1px solid #ddd;
+  border-radius: .25rem;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+}
+
+
+.btn-primary {
+  background-color: #FF385C; 
+  border-color: #FF385C; 
+  font-size: 1rem; 
+  font-weight: 500;
+  padding: .5rem 1.5rem; 
+  border-radius: .25rem; 
+  width: 100%; 
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #F53E42; 
+  border-color: #F53E42;
+}
+
+
+.Link {
+  display: block;
+  color: #007BFF; 
+  margin-top: 2rem; 
   text-decoration: none;
-  color: gray;
-  margin-top: 20px;
+}
+
+.Link:hover, .Link:focus {
+  text-decoration: underline; 
+}
+
+
+.text-danger {
+  color: #D9534F; 
 }

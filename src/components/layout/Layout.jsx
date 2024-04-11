@@ -4,6 +4,7 @@ import { Footer } from '../footer/footer';
 import { useState } from 'react';
 import { getLoggedUser, logout } from '../../services/users-service';
 import './Layout.css';
+
 export function Layout() {
   const [isLogged, setIsLogged] = useState(getLoggedUser());
 
@@ -13,9 +14,11 @@ export function Layout() {
   }
 
   return (
-    <div>
+    <div className="page-container"> 
       <Header isLogged={isLogged} logoutHandler={logoutUser} />
-      <Outlet />
+      <div className="content"> 
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

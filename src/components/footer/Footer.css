@@ -1,0 +1,34 @@
+body, html{
+    height: 100%;
+    margin: 0;
+
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer{
+    margin-top: auto; 
+    background-color: #343a40;
+    color: #fff;
+
+}
+
+.footer div{
+    background-color: rgba(0,0,0,0.05);
+}
+
+.text-reset{
+    color:inherit;
+}
+.text-reset:hover{
+    color: #aaa;
+    text-decoration: none;
+}
+
+.fw-bold{
+    font-weight: bold;
+}
