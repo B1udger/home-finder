@@ -1,4 +1,4 @@
-.rental-form-wrapper {
+/* .rental-form-wrapper { ---------------------------First Design--------------------------------------
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,4 +10,76 @@
   padding: 20px;
   border-radius: 10px;
   width: 500px;
+} */
+
+
+.rental-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f7f7f7; 
+}
+
+.rental-form {
+  width: 100%;
+  max-width: 600px; 
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+}
+
+.rental-form h3 {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #FF385C; 
+}
+
+.floating-label { 
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  color: #222222; 
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  border: 1px solid #DDDDDD; 
+}
+
+.form-control:focus {
+  border-color: #FF385C; 
+  box-shadow: none; 
+}
+
+.btn-primary {
+  background-color: #FF385C; 
+  border: none;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: darken(#FF385C, 5%);
+}
+
+.btn-primary:focus {
+  box-shadow: none; 
+}
+
+
+@media (max-width: 768px) {
+  .rental-form-container {
+    padding: 1rem;
+  }
+
+  .rental-form {
+    padding: 1rem;
+  }
 }

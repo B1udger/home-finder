@@ -9,7 +9,7 @@
       "additionalInfo": "Unique Design Studio by SkyCity mall. It's brand new, cozy and calm. We have 300 Mb/ps Wi Fi + 55'' Smart TV. Perfect for Solo, Couples or Business Visitors",
       "address": "Sofia Center, \"Strandzha\" St 56, 1303 Sofia",
       "pricePerNight": "75",
-      "isRented": false
+      "isRented": true
     },
     {
       "id": "5ce6",
@@ -20,7 +20,7 @@
       "additionalInfo": "Make some memories at this unique and family-friendly place. In a beautiful green village 10 min drive from Etrople,(supermarket, resturant )  600 meters from  horses cows and chips  you can enjoy nature, listen to the river in the garden enjoy quiet and peaceful sound re-charge yourself ",
       "address": "ul. \"Hristo Botev\" 22, Boykovets",
       "pricePerNight": "117",
-      "isRented": false
+      "isRented": true
     },
     {
       "id": "bdd5",
@@ -140,6 +140,22 @@
       "startDate": "2024-04-10",
       "endDate": "2024-04-12",
       "total": "580.00"
+    },
+    {
+      "id": "044c",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "5ce6",
+      "startDate": "2024-04-25",
+      "endDate": "2024-05-09",
+      "total": "1638.00"
+    },
+    {
+      "id": "46da",
+      "userId": "bd280831-2a6e-484a-9930-94bb0aba4498",
+      "rentalId": "96e2",
+      "startDate": "2024-04-19",
+      "endDate": "2024-04-25",
+      "total": "450.00"
     }
   ],
   "images": [

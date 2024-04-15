@@ -1,10 +1,10 @@
-.key {
+ .key { 
   font-weight: bold;
 }
 
 .btn-holder {
   button {
-    margin: 10px;
+    margin: 1px ;
   }
 }
 
@@ -18,4 +18,25 @@
 
 .no {
   color: red;
+} 
+
+.user-card{
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.user-card .card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-card .btn-holder{
+  margin-top: auto;
+}
+
+.rentals-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1rem;
 }

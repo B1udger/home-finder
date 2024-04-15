@@ -1,0 +1,64 @@
+
+.reservation-card {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reservation-card h2 {
+    color: #FF385C; 
+    margin-bottom: 8px;
+  }
+  
+  .reservation-card p {
+    margin-bottom: 16px;
+  }
+  
+  .dates, .guests {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  
+  .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FF385C;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #f22f46; 
+  }
+  
+  .react-datepicker-wrapper {
+    flex-grow: 1;
+  }
+  
+  input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  

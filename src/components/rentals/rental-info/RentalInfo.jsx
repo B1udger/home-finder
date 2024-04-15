@@ -2,12 +2,13 @@ import './RentalInfo.css';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getRentalById, saveRental } from '../../../services/rentals-service';
-import { Button, Carousel, Form } from 'react-bootstrap';
+import { Button, Carousel, Form} from 'react-bootstrap';
 import { getLoggedUser } from '../../../services/users-service';
 import { dateDiff, getCloudinaryImg } from '../../../utils/helpers';
 import { saveRent } from '../../../services/rent-service';
 import { AdvancedImage } from '@cloudinary/react';
 import { getImagesByRentalId } from '../../../services/image-service';
+
 
 export function RentalInfo() {
   const params = useParams();
@@ -100,7 +101,7 @@ export function RentalInfo() {
     }
   };
 
-  return (
+ return (
     <div className="rental-info-container">
       <h2>{rental.rentalName}</h2>
       <h5>{rental.address}</h5>
@@ -179,3 +180,4 @@ export function RentalInfo() {
     </div>
   );
 }
+
