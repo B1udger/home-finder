@@ -49,6 +49,12 @@ or
 - Password: user2
 
 ## Application screenshots
+![img1](https://github.com/m-georgiev01/home-finder/assets/83757143/05b8e56c-bc7e-4b18-ab25-ca7342ec1667)
+![img2](https://github.com/m-georgiev01/home-finder/assets/83757143/d6bfa994-c3d4-4ad2-9d3d-7544ef484870)
+![img3](https://github.com/m-georgiev01/home-finder/assets/83757143/63d0758d-e5c3-45b3-b043-4b3a98ffb21e)
+![img4](https://github.com/m-georgiev01/home-finder/assets/83757143/75790bd4-e6f5-4caa-8532-cb8b4ae42d93)
+![img5](https://github.com/m-georgiev01/home-finder/assets/83757143/514e2821-ddba-4766-b52a-2271e82e79fc)
+![img6](https://github.com/m-georgiev01/home-finder/assets/83757143/bb04b792-5fcb-4b70-bcc0-94780ec59b19)
 
 ## Built With
 
