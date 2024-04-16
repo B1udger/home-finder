@@ -15,23 +15,38 @@ export function Header({ isLogged, logoutHandler }) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/" >Offers</Nav.Link>
-            <Nav.Link as={Link} to="/rentals/add" >Add Offer</Nav.Link>
+            <Nav.Link as={Link} to="/">
+              Offers
+            </Nav.Link>
+
             {isLogged && isLogged.isAdmin && (
               <>
-                <Nav.Link as={Link} to="/users" >Users</Nav.Link>
-                <Nav.Link as={Link} to="/users/add" >Add User</Nav.Link>
+                <Nav.Link as={Link} to="/rentals/add">
+                  Add Offer
+                </Nav.Link>
+                <Nav.Link as={Link} to="/users">
+                  Users
+                </Nav.Link>
+                <Nav.Link as={Link} to="/users/add">
+                  Add User
+                </Nav.Link>
               </>
             )}
           </Nav>
           <Nav>
             {isLogged ? (
               <>
-                <Nav.Link as={Link} to={`/user/${isLogged.id}`} >My profile</Nav.Link>
-                <Nav.Link as={Link} to="/" onClick={logoutHandler}>Logout</Nav.Link>
+                <Nav.Link as={Link} to={`/user/${isLogged.id}`}>
+                  My profile
+                </Nav.Link>
+                <Nav.Link as={Link} to="/" onClick={logoutHandler}>
+                  Logout
+                </Nav.Link>
               </>
             ) : (
-              <Nav.Link as={Link} to="/login" >Login</Nav.Link>
+              <Nav.Link as={Link} to="/login">
+                Login
+              </Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse>
