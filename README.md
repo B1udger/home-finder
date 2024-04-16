@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Home Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About The Project
 
-## Available Scripts
+Home Finder is a SPA Serveless Web App made with React. It gives you the opportunity to easily find and rent your next place to stay at a vacation
 
-In the project directory, you can run:
+## Project Overview
+
+- The backend is developed with JSON Server and the frontend is build with React and React Bootstrap
+- The aplication can be used without having an account but then the user can only see the available offers for rent. If he wants to see the offer details or to rent he must login to his acout or create one
+- Logged users can see more information about the offers and rent them if they want. They can also see their profile info and the rents they have made
+- The administrators can access and do all the things that a normal user can and also: edit or delete offers, see all users in the system (and edit or delete them), add more users in the system, and make other users administrators
+
+## Getting Started
+
+You are required to have Node.js installed on your PC
+
+### Run the project
+
+### `npm install`
+
+Installs all the dependencies required for the project.
+
+### `npm run json-server`
+
+This starts JSON Server
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Runs the application in a development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
+The application will automatically reload if you change any of the source files.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Test Accounts
 
-### `npm test`
+#### Admin user:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Email: admin@admin.com
+- Password: admin
 
-### `npm run build`
+#### Normal users:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Email: user1@user1.com
+- Password: user1
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+or
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Email: user2@user2.com
+- Password: user2
 
-### `npm run eject`
+## Application screenshots
+![img1](https://github.com/m-georgiev01/home-finder/assets/83757143/05b8e56c-bc7e-4b18-ab25-ca7342ec1667)
+![img2](https://github.com/m-georgiev01/home-finder/assets/83757143/d6bfa994-c3d4-4ad2-9d3d-7544ef484870)
+![img3](https://github.com/m-georgiev01/home-finder/assets/83757143/63d0758d-e5c3-45b3-b043-4b3a98ffb21e)
+![img4](https://github.com/m-georgiev01/home-finder/assets/83757143/75790bd4-e6f5-4caa-8532-cb8b4ae42d93)
+![img5](https://github.com/m-georgiev01/home-finder/assets/83757143/514e2821-ddba-4766-b52a-2271e82e79fc)
+![img6](https://github.com/m-georgiev01/home-finder/assets/83757143/bb04b792-5fcb-4b70-bcc0-94780ec59b19)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Built With
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ReactJS](https://react.dev/)
+- [React Bootstrap](https://react-bootstrap.netlify.app/)
+- [React Router](https://reactrouter.com/en/main)
+- [JSON Server](https://www.npmjs.com/package/json-server)
+- [Axios](https://axios-http.com/docs/intro)
+- [Cloudinary](https://cloudinary.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+  <br/><br/>

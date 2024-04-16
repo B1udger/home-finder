@@ -72,7 +72,13 @@ export function UserForm() {
   return (
     <div className="user-form-wrapper">
       <Form onSubmit={onFormSubmit}>
-        <h3>{pathname === '/register' ? 'Register' : 'Add user'}</h3>
+        <h3>
+          {pathname === '/register'
+            ? 'Register'
+            : pathname === '/users/add'
+            ? 'Add user'
+            : 'Edit user'}
+        </h3>
 
         <Form.Group className="mb-3" controlId="formBasicName">
           <FloatingLabel label="Name">
